@@ -1,0 +1,49 @@
+{
+  "channels": {
+    "slack": {
+      "enabled": true,
+      "mode": "socket",
+      "appToken": {
+        "source": "env",
+        "provider": "default",
+        "id": "SLACK_APP_TOKEN"
+      },
+      "botToken": {
+        "source": "env",
+        "provider": "default",
+        "id": "SLACK_BOT_TOKEN"
+      }
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.9"
+  },
+  "gateway": {
+    "mode": "local"
+  },
+  "models": {
+    "providers": {
+      "groq": {
+        "apiKey": "YOUR_GROQ_API_KEY"
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "groq:manual": {
+        "provider": "groq",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "groq/llama-3.3-70b-versatile"
+      },
+      "models": {
+        "groq/llama-3.3-70b-versatile": {}
+      }
+    }
+  }
+}
